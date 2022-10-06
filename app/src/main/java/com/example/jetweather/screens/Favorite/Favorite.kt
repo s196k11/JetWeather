@@ -79,7 +79,7 @@ fun CityRow(
         .padding(3.dp)
         .height(50.dp)
         .clickable {
-                   navController.navigate(WeatherScreens.MainScreen.name + "/${favorite.city}")
+//                   navController.navigate(WeatherScreens.MainScreen.name + "/${favorite.city}")
         },
         shape = CircleShape.copy(topEnd = CornerSize(7.dp)),
         color = Color(0xffb2dfdb)
@@ -98,6 +98,7 @@ fun CityRow(
             Icon(imageVector = Icons.Default.Delete, contentDescription = null,
                 modifier = Modifier.clickable {
                     favoriteViewModel.deleteFavorite(favorite)
+                    navController.navigate(WeatherScreens.MainScreen.name + "/${favorite.city}")
                 },
                 tint = Color.Red.copy(alpha = 0.3f)
             )
